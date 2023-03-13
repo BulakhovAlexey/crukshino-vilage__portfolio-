@@ -5930,6 +5930,13 @@ PERFORMANCE OF THIS SOFTWARE.
                 }
             }
         }));
+        function initSoldHouses() {
+            let soldNum = document.querySelector("[data-num]");
+            const summaru = +script_elements.length;
+            const sold = +document.querySelectorAll(".element__item._sold").length;
+            soldNum.innerHTML = Math.round(sold / summaru * 100) + "%";
+        }
+        initSoldHouses();
         isWebp();
         addTouchClass();
         formFieldsInit({
