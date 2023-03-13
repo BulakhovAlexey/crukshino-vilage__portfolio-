@@ -100,3 +100,13 @@ buttons.addEventListener("click", (e) => {
   }
 })
 //========================================================================================================================================================
+// init sold houses
+function initSoldHouses() {
+  let soldNum = document.querySelector("[data-num]")
+  const summaru = +elements.length
+  const sold = +document.querySelectorAll(".element__item._sold").length
+  soldNum.innerHTML = Math.round((sold / summaru) * 100) + "%"
+}
+
+initSoldHouses()
+//========================================================================================================================================================

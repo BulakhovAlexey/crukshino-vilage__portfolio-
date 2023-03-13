@@ -279,6 +279,23 @@ body {
 ._book {
 	background-color: $blueColor;
 }
+.gradient-icon{
+    position: absolute;
+    width: 100px;
+    height: 101px;
+    z-index: 7;
+    background: url('@img/svg/360.svg') center / cover no-repeat;
+    &::after{
+        content:'';
+        position: absolute;
+        width: rem(34);
+        height: rem(34);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        background: url('@img/svg/360-degrees.png') center / cover no-repeat;
+    }
+}
 
 // Соединение стилей отдельных страниц
 @import "home";
