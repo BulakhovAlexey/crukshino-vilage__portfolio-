@@ -1,0 +1,120 @@
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+
+._icon-englishCottage:before {
+	content: "\e920";
+  }
+._icon-ok:before {
+  content: "\e921";
+}
+._icon-airTemperature:before {
+	content: "\e900";
+  }
+  ._icon-arrow:before {
+	content: "\e901";
+  }
+  ._icon-audio:before {
+	content: "\e902";
+  }
+  ._icon-brickwall:before {
+	content: "\e903";
+  }
+  ._icon-calendar:before {
+	content: "\e904";
+  }
+  ._icon-capital:before {
+	content: "\e905";
+  }
+  ._icon-co2-1:before {
+	content: "\e906";
+  }
+  ._icon-construction:before {
+	content: "\e907";
+  }
+  ._icon-drop:before {
+	content: "\e908";
+  }
+  ._icon-facebook:before {
+	content: "\e909";
+  }
+  ._icon-field:before {
+	content: "\e90a";
+  }
+  ._icon-file:before {
+	content: "\e90b";
+  }
+  ._icon-file2:before {
+	content: "\e90c";
+  }
+  ._icon-garage:before {
+	content: "\e90d";
+  }
+  ._icon-heater:before {
+	content: "\e90e";
+  }
+  ._icon-house:before {
+	content: "\e90f";
+  }
+  ._icon-insta:before {
+	content: "\e910";
+  }
+  ._icon-interiorDesignsvg:before {
+	content: "\e911";
+  }
+  ._icon-light-bulb:before {
+	content: "\e912";
+  }
+  ._icon-logo:before {
+	content: "\e913";
+  }
+  ._icon-odnoklassniki:before {
+	content: "\e914";
+  }
+  ._icon-passport:before {
+	content: "\e915";
+  }
+  ._icon-property:before {
+	content: "\e916";
+  }
+  ._icon-real-estate:before {
+	content: "\e917";
+  }
+  ._icon-settings:before {
+	content: "\e918";
+  }
+  ._icon-stage:before {
+	content: "\e919";
+  }
+  ._icon-temperature:before {
+	content: "\e91a";
+  }
+  ._icon-thermometer:before {
+	content: "\e91b";
+  }
+  ._icon-underfloor-heating:before {
+	content: "\e91c";
+  }
+  ._icon-vk:before {
+	content: "\e91d";
+  }
+  ._icon-whatsapp:before {
+	content: "\e91e";
+  }
+  ._icon-wind:before {
+	content: "\e91f";
+  }
+  
