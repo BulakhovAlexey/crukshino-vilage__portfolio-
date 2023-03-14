@@ -17,7 +17,7 @@ flsFunctions.isWebp()
 flsFunctions.addTouchClass()
 
 /* Добавление loaded для HTML После полной загрузки страницы */
-//flsFunctions.addLoadedClass()
+flsFunctions.addLoadedClass()
 
 /* Модуль для работы с меню (Бургер) */
 // flsFunctions.menuInit();
@@ -181,7 +181,7 @@ import "./files/sliders.js"
 // Наблюдатель на объектах атрибута data-watch
 // Документация: https://template.fls.guru/template-docs/modul-nabljudatel-za-poyavleniem-elementa-pri-skrolle.html
 // Сніппет(HTML):
-//import "./libs/watcher.js";
+import "./libs/watcher.js"
 
 // модульПоекранноїПрокрутки
 // Документація: https://template.fls.guru/template-docs/modul-poekrannoj-prokrutki-stranicy-fullpage.html

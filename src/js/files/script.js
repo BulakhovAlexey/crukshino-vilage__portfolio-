@@ -110,3 +110,15 @@ function initSoldHouses() {
 
 initSoldHouses()
 //========================================================================================================================================================
+//set delay
+
+function initDelay() {
+  const advantages = document.querySelectorAll(".box-advantages__item")
+  let num = 0
+  advantages.forEach((advatage) => {
+    advatage.style.animationDelay = num + "s"
+    num += 0.1
+  })
+}
+initDelay()
+//========================================================================================================================================================

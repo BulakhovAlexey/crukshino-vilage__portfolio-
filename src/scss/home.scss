@@ -55,6 +55,7 @@
         text-align: left;
     }
     &__title {
+        opacity: 0;
         font-family: 'Neumann';
         font-weight: 400;
         @include adaptiveValue("font-size", 68,45);
@@ -76,6 +77,7 @@
         @include adaptiveValue("margin-bottom", 75, 25);
     }
     &__desc {
+        opacity: 0;
         display: inline-block;
         font-family: 'Neumann';
         font-weight: 400;
@@ -84,6 +86,7 @@
         color: $whiteColor;
     }
     &__price {
+        opacity: 0;
         height: rem(50);
         width: rem(240);
         display: inline-flex;
@@ -107,6 +110,7 @@
         gap: rem(64);
     }
     &__button {
+        opacity: 0;
         max-width: rem(370);
         width: 100%;
         font-weight: 700;
@@ -145,6 +149,7 @@
     }
 }
 .see-start {
+    opacity: 0;
     position: relative;
     padding: rem(40) rem(40) rem(40) rem(60);
     @media (max-width:$tablet){
@@ -208,6 +213,7 @@
     position: relative;
     z-index: 9;
     &__inner-wrap{
+        transform: translate(-200%,0px);
         position: absolute;
         top: -190px;
         padding: rem(10) rem(10) rem(10) rem(0);
@@ -216,6 +222,7 @@
         background: $whiteColor;
         border-radius:15px;
         max-width: rem(1440);
+        transition: all 0.5s ease 0.4s;
         @media (max-width:$pc){
             padding: rem(10);
             border-radius: 0px;
@@ -252,7 +259,8 @@
             top: 0;
             object-fit: cover;
             @media (max-width:$pc){
-                display: none;      
+                display: none;
+                visibility: hidden;      
             }
         }
     }
@@ -265,6 +273,10 @@
         @media (max-width:$mobile){
              text-align: center; 
         }
+    }
+    &__form{
+        z-index: 5;
+        position: relative;
     }
     &__title {
         font-weight: 700;
@@ -307,14 +319,27 @@
     &__content {
         max-width: rem(642);
         flex: 1 1 40%;
+        &._watcher-view{
+            .advantages__title{
+                animation: slideUp 0.7s ease-out 0.2s forwards;
+            }
+            .advantages__sub-title{
+                animation: slideUp 0.7s ease-out 0.5s forwards;
+            }
+            .advantages__desc{
+                animation: scaleUp 0.4s linear 0.5s forwards;
+            }
+        }
     }
     &__title,
     &__sub-title{
+        opacity: 0;
         @media (max-width:$mobile){
              text-align: center; 
         }
     }
     &__desc {
+        opacity: 0;
         max-width: rem(570);
         @include adaptiveValue("font-size", 22, 18);
         line-height: math.div(36 , 22);
@@ -331,9 +356,25 @@
              flex: 1 1 100%;
              text-align: center;
         }
+        &._watcher-view{
+            .advantages__image{
+                &:first-child{
+                    animation: rotateImageMinus 0.8s linear 0.2s  forwards;
+                }
+                &:nth-child(2){
+                    animation: rotateImage 0.8s linear 0.4s  forwards;
+                }
+                &:last-child{
+                    animation: rotateImagePlus 0.8s linear 0.6s  forwards;
+                }
+            }
+        }
     }
     &__image {
+        opacity: 0;
+        transform: rotate(110deg);
         img{
+            transform-origin: left top;
             border: 8px solid #FFFFFF;
             border-radius: 10px;
             max-width: 100%;
@@ -343,17 +384,20 @@
             transform: rotate(-10deg);
             position: relative;
             z-index: 1;
+            
         }
         &:nth-child(2){
             position: relative;
             z-index: 2;
             margin-top: rem(-55);
+            
         }
         &:last-child{
             transform: rotate(10deg);
             position: relative;
             z-index: 3;
             margin-top: rem(-55);
+            
         }
     }
     &__box {
@@ -362,7 +406,13 @@
     }
 }
 .box-advantages {
+    &._watcher-view{
+        .box-advantages__item{
+            animation: advantageShow 0.45s cubic-bezier(0.470, 0.000, 0.745, 0.715) reverse forwards;
+        }
+    }
     &__item {
+        opacity: 0;
         border: 1px solid rgba(235, 235, 235, 1);
         padding: rem(30) rem(25) rem(40) rem(25);
         grid-column: span 1;
@@ -1853,8 +1903,78 @@
     }
 }
 //========================================================================================================================================================
-
-
+//animation
+@keyframes slideUp {
+    from{
+        opacity: 0;
+        transform: translate(0px,100%);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0px,0px);
+    }
+}
+@keyframes slideDown {
+    from{
+        transform: translate(0px,-200%);
+    }
+    to{
+        transform: translate(0px,0px);
+    }
+}
+@keyframes scaleUp {
+    from{
+        opacity: 0;
+        transform: scale(0.001);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes rotateImage {
+    from{
+        transform: rotate(110deg);
+        transform-origin: top left;
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: rotate(0);
+    }
+}
+@keyframes rotateImageMinus {
+    from{
+        transform: rotate(110deg);
+        transform-origin: top left;
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: rotate(-10);
+    }
+}
+@keyframes rotateImagePlus {
+    from{
+        transform: rotate(110deg);
+        transform-origin: top left;
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: rotate(10);
+    }
+}
+@keyframes advantageShow {
+    0% {
+        opacity: 1;
+      transform: translateZ(0) translateY(0) translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateZ(-400px) translateY(200px) translateX(-200px);
+    }
+  }
 
 
 

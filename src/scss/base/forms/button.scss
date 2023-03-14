@@ -4,8 +4,11 @@
 .button {
 	display: inline-flex;
 	padding: 0px 0px;
+	transition: all 0.3s ease 0s;
+	opacity: 0.7;
 	@media (any-hover: hover) {
 		&:hover {
+			opacity: 1;
 		}
 	}
 	&._fw {
