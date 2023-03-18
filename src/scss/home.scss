@@ -534,24 +534,35 @@
         margin-bottom: em(43,45);
     }
     &__row {
-        display: flex;
-        justify-content: space-between;
-        gap: rem(90);
-        @include adaptiveValue("gap",90 , 15);
+        overflow: hidden;
         &:not(:last-child) {
             @include adaptiveValue("margin-bottom",100 ,30 );
         }
-        @media (max-width:$mobile){
-            flex-wrap: wrap;
-        }
         &:nth-child(even){
             @media (min-width:$mobile){
-                flex-direction: row-reverse;
+                .row-wall__wrap{
+                    flex-direction: row-reverse;
+                }
             }
         }
     }
 }
 .row-wall {
+    &._watcher-view{
+        .row-wall__wrap{
+            animation: slideUp 0.4s ease-out 0s forwards;
+        }
+    }
+    &__wrap{
+        opacity: 0;
+        display: flex;
+        justify-content: space-between;
+        gap: rem(90);
+        @include adaptiveValue("gap",90 , 15);
+        @media (max-width:$mobile){
+            flex-wrap: wrap;
+        }
+    }
     &__visual {
         flex: 0 1 rem(700);
         border: 1px solid #EBEBEB;
@@ -710,6 +721,13 @@
     background: url('@img/territory-bg.jpg') center / cover no-repeat;
     padding: rem(0) rem(0) rem(20) rem(0);
     &__inner {
+        &._watcher-view{
+            .sliderblock{
+                &__desc{
+                    animation: scaleUp 0.3s linear 0s forwards;
+                }
+            }
+        }
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -731,6 +749,7 @@
         }
     }
     &__desc {
+        opacity: 0;
         @media (min-width:$mobile){
             flex: 0 0 100%;  
         }
@@ -780,7 +799,6 @@
 .territory,
 .transport {
     &__wrap {
-        //transform: scale(0.97);
         position: relative;
         width: 100%;
         padding-bottom: 90%;
@@ -791,7 +809,6 @@
             left: 0;
             top: 0;
             object-fit: cover;
-            //max-width: 100%;
         }
     }
 }
@@ -920,6 +937,13 @@
     }
     &__item {
         display: block;
+        &._watcher-view{
+            .gallery-houses__image{
+                transition: all 0.4s linear 0s;
+                transform: translate(0px,0px);
+                opacity: 1;
+            }
+        }
         &._main {
             grid-area: main;
             .gallery-houses__image{
@@ -929,7 +953,7 @@
         &._sub-main {
             grid-area: sub-main;
             .gallery-houses__image{
-                padding-bottom: 43%; 
+                padding-bottom: 43%;
             }
         }
         &._sub-sub-main {
@@ -947,6 +971,8 @@
     }
     &__image {
         position: relative;
+        transform: translate(40%,0px); 
+        opacity: 0;
         img{
             position: absolute;
             left: 0;
@@ -1500,6 +1526,20 @@
     &:last-child{
         @include adaptiveValue("margin-bottom", 120, 50);
     }
+    &._watcher-view{
+        .item-finishing__content{
+            animation: scaleUp 0.5s linear forwards;
+        }
+        @media (min-width:$mobile){
+            .slider-tokio,
+            .slider-bergen,
+            .slider-york {
+                transform: translate(-100%,0px);
+                transition: all 0.6s ease 0s;
+                opacity: 1;
+            }     
+        }
+    }
     @media (min-width:$mobile){
         display: flex;
     }
@@ -1509,6 +1549,7 @@
     }
     &__content {
         flex: 0 0 100%;
+        opacity: 0;
     }
     &__inner {
         margin-bottom: rem(10);
@@ -1578,17 +1619,20 @@
         @media (min-width:$mobile){
             flex: 0 0 50%;
             min-width: 0;
-            transform: translate(-100%,0px);
         }
     }
 }
 .slider-tokio,
 .slider-bergen,
 .slider-york {
+    transition: all 0.5s ease 0s;
+    @media (min-width:$mobile){
+        opacity: 0;      
+    }
     &__slide {
         position: relative;
         width: 100%;
-        padding-bottom: 90%;
+        padding-bottom: 100%;
         img{
             position: absolute;
             width: 100%;
@@ -1607,7 +1651,14 @@
     @include adaptiveValue("padding-top", 120, 50);
     @include adaptiveValue("padding-bottom", 120, 50);
     color: $whiteColor;
+    &._watcher-view{
+        .white-box__top{
+            animation: slideDown 0.3s ease-out forwards 0.2s;
+        }
+    }
     &__top {
+        opacity: 0;
+        overflow: hidden;
         display: flex;
         align-items: flex-start;
         gap: rem(30);
@@ -1920,6 +1971,7 @@
     }
     to{
         transform: translate(0px,0px);
+        opacity: 1;
     }
 }
 @keyframes scaleUp {
@@ -1974,7 +2026,21 @@
         opacity: 0;
         transform: translateZ(-400px) translateY(200px) translateX(-200px);
     }
-  }
+}
+  @keyframes flipScale {
+    0% {
+        opacity: 1;
+        transform: scale(1) rotate3d(1, 1, 0, 0deg);
+    }
+    50% {
+        transform: scale(0.7) rotate3d(1, 1, 0, 90deg);
+    }
+    100% {
+        transform: scale(1) rotate3d(1, 1, 0, 180deg);
+    }
+}
+//========================================================================================================================================================
+
 
 
 

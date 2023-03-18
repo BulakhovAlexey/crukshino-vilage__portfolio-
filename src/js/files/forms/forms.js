@@ -304,6 +304,11 @@ export function formSubmit() {
         popup ? flsModules.popup.open(popup) : null
       }
     }, 0)
+    setTimeout(() => {
+      if (form.hasAttribute("data-redirect")) {
+        window.location.href = form.dataset.redirect
+      }
+    }, 500)
     // Мы чистим форму
     formValidate.formClean(form)
     // Мы сообщаем в консоли

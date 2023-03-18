@@ -7,7 +7,7 @@
 // Мы подключаем Swider Slider с node_modules
 // При необходимости подключите дополнительные модули слайдера, указав на них в {} черезКому
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation } from "swiper"
+import Swiper, { Navigation, EffectFade, EffectFlip } from "swiper"
 /*
 Основные модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -33,7 +33,11 @@ function initSliders() {
     // создаем слайдеры через  -- ; --
     new Swiper(".sliderblock__territory", {
       // selector
-      modules: [Navigation],
+      modules: [Navigation, EffectFade],
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
       observer: true,
       observeParents: true,
       slidesPerView: 1,
@@ -52,7 +56,11 @@ function initSliders() {
     // создаем слайдеры через  -- ; --
     new Swiper(".sliderblock__transport", {
       // selector
-      modules: [Navigation],
+      modules: [Navigation, EffectFade],
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
       observer: true,
       observeParents: true,
       slidesPerView: 1,
@@ -70,7 +78,11 @@ function initSliders() {
     // создаем слайдеры через  -- ; --
     new Swiper(".slider-tokio__slider", {
       // selector
-      modules: [Navigation],
+      modules: [Navigation, EffectFlip],
+      effect: "flip",
+      flipEffect: {
+        slideShadows: false,
+      },
       observer: true,
       observeParents: true,
       slidesPerView: 1,
@@ -94,7 +106,11 @@ function initSliders() {
     // создаем слайдеры через  -- ; --
     new Swiper(".slider-bergen__slider", {
       // selector
-      modules: [Navigation],
+      modules: [Navigation, EffectFlip],
+      effect: "flip",
+      flipEffect: {
+        slideShadows: false,
+      },
       observer: true,
       observeParents: true,
       slidesPerView: 1,
@@ -118,7 +134,11 @@ function initSliders() {
     // создаем слайдеры через  -- ; --
     new Swiper(".slider-york__slider", {
       // selector
-      modules: [Navigation],
+      modules: [Navigation, EffectFlip],
+      effect: "flip",
+      flipEffect: {
+        slideShadows: false,
+      },
       observer: true,
       observeParents: true,
       slidesPerView: 1,
@@ -133,6 +153,9 @@ function initSliders() {
         init: function () {
           document.querySelector("[data-york-count]").innerHTML =
             +this.slides.length
+        },
+        slideChange: function () {
+          //console.log(this)
         },
       },
     })

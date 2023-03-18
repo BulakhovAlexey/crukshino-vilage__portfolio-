@@ -4,13 +4,11 @@
 	z-index: 3;
 	width: 100%;
 	left: 0;
-	top: 0;
+	top: 0px;
 	padding: rem(25) rem(0);
 	color: $whiteColor;
 	&._thanks{
 		background: #00004A;
-	}
-	&__menu {
 	}
 }
 .menu {
