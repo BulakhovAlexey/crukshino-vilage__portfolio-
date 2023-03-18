@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 @font-face {
   font-family: icons;
   font-display: swap;
@@ -349,13 +347,6 @@ html.touch .button {
 .wrapper > * {
   min-width: 0;
 }
-
-/*
-(i) Стили будут применены к
-все классы, содержащие *__container
-К примеру header__container, main__container и т.п.
-Фрагмент (HTML): cnt
-*/
 
 [class*=__container] {
   max-width: 74.375rem;
@@ -758,7 +749,7 @@ textarea.input {
   background: url("../img/svg/360.svg") center/cover no-repeat;
 }
 
-.no-webp .gradient-icon::after{
+.no-webp .gradient-icon::after {
   background: url("../img/svg/360-degrees.png") center/cover no-repeat; }
 
 .gradient-icon::after {
@@ -779,7 +770,7 @@ textarea.input {
   z-index: 2;
 }
 
-.no-webp .start::after{
+.no-webp .start::after {
   background: url("../img/start-bg.jpg") center/cover no-repeat; }
 
 .start::after {
@@ -950,6 +941,10 @@ textarea.input {
   text-decoration: underline;
   position: relative;
   z-index: 7;
+  opacity: 0.8;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .see-start__icon {
@@ -1323,7 +1318,7 @@ textarea.input {
   position: relative;
 }
 
-.no-webp .row-wall__visual.first-visual::after{
+.no-webp .row-wall__visual.first-visual::after {
   background: url("../img/brick.jpg") center/cover no-repeat; }
 
 .row-wall__visual.first-visual::after {
@@ -1483,7 +1478,7 @@ textarea.input {
           flex: 0 1 8.75rem;
 }
 
-.no-webp .sliderblock{
+.no-webp .sliderblock {
   background: url("../img/territory-bg.jpg") center/cover no-repeat; }
 
 .sliderblock {
@@ -1836,7 +1831,13 @@ textarea.input {
   width: 100%;
 }
 
+.village-gallery__photo._watcher-view img {
+  -webkit-animation: scaleUp 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+          animation: scaleUp 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
 .village-gallery__photo img {
+  opacity: 0;
   position: absolute;
   left: 0;
   top: 0;
@@ -2561,7 +2562,13 @@ textarea.input {
   padding-bottom: 84%;
 }
 
+.white-box__image._watcher-view img {
+  -webkit-animation: scaleUp 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+          animation: scaleUp 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
 .white-box__image img {
+  opacity: 0;
   position: absolute;
   left: 0;
   top: 0;
@@ -2760,7 +2767,7 @@ textarea.input {
      object-fit: cover;
 }
 
-.no-webp .book{
+.no-webp .book {
   background: url("../img/book-bg.jpg") center/cover no-repeat; }
 
 .book__title {
@@ -3075,6 +3082,108 @@ textarea.input {
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+
+.tippy-box[data-animation=fade][data-state=hidden] {
+  opacity: 0;
+}
+
+[data-tippy-root] {
+  max-width: calc(100vw - 10px);
+}
+
+.tippy-box {
+  position: relative;
+  background-color: #333;
+  color: #ffffff;
+  border-radius: 40px;
+  font-size: 18px;
+  line-height: 1.7;
+  outline: 0;
+  -webkit-transition-property: visibility, opacity, -webkit-transform;
+  transition-property: visibility, opacity, -webkit-transform;
+  -o-transition-property: transform, visibility, opacity;
+  transition-property: transform, visibility, opacity;
+  transition-property: transform, visibility, opacity, -webkit-transform;
+}
+
+.tippy-box[data-placement^=top] > .tippy-arrow {
+  bottom: 0;
+}
+
+.tippy-box[data-placement^=top] > .tippy-arrow:before {
+  bottom: -15px;
+  left: 0;
+  border-width: 16px 16px 0;
+  border-top-color: initial;
+  -webkit-transform-origin: center top;
+      -ms-transform-origin: center top;
+          transform-origin: center top;
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-arrow {
+  top: 0;
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-arrow:before {
+  top: -7px;
+  left: 0;
+  border-width: 0 8px 8px;
+  border-bottom-color: initial;
+  -webkit-transform-origin: center bottom;
+      -ms-transform-origin: center bottom;
+          transform-origin: center bottom;
+}
+
+.tippy-box[data-placement^=left] > .tippy-arrow {
+  right: 0;
+}
+
+.tippy-box[data-placement^=left] > .tippy-arrow:before {
+  border-width: 8px 0 8px 8px;
+  border-left-color: initial;
+  right: -7px;
+  -webkit-transform-origin: center left;
+      -ms-transform-origin: center left;
+          transform-origin: center left;
+}
+
+.tippy-box[data-placement^=right] > .tippy-arrow {
+  left: 0;
+}
+
+.tippy-box[data-placement^=right] > .tippy-arrow:before {
+  left: -7px;
+  border-width: 8px 8px 8px 0;
+  border-right-color: initial;
+  -webkit-transform-origin: center right;
+      -ms-transform-origin: center right;
+          transform-origin: center right;
+}
+
+.tippy-box[data-inertia][data-state=visible] {
+  -webkit-transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+       -o-transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+          transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+}
+
+.tippy-arrow {
+  width: 36px;
+  height: 36px;
+  color: #333;
+}
+
+.tippy-arrow:before {
+  content: "";
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.tippy-content {
+  position: relative;
+  padding: 20px 20px;
+  z-index: 1;
 }
 
 .swiper {
@@ -7213,9 +7322,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .start__button:hover {
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
+    color: white;
+  }
+
+  .see-start__link:hover {
+    opacity: 1;
   }
 
   .gallery-houses:hover .gallery-houses__main-desc {
@@ -7243,12 +7354,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 }
 
-.webp .gradient-icon::after{ background: url(../img/svg/360-degrees.webp) center/cover no-repeat; }
+.webp .gradient-icon::after { background: url(../img/svg/360-degrees.webp) center/cover no-repeat; }
 
-.webp .start::after{ background: url(../img/start-bg.webp) center/cover no-repeat; }
+.webp .start::after { background: url(../img/start-bg.webp) center/cover no-repeat; }
 
-.webp .row-wall__visual.first-visual::after{ background: url(../img/brick.webp) center/cover no-repeat; }
+.webp .row-wall__visual.first-visual::after { background: url(../img/brick.webp) center/cover no-repeat; }
 
-.webp .sliderblock{ background: url(../img/territory-bg.webp) center/cover no-repeat; }
+.webp .sliderblock { background: url(../img/territory-bg.webp) center/cover no-repeat; }
 
-.webp .book{ background: url(../img/book-bg.webp) center/cover no-repeat; }
+.webp .book { background: url(../img/book-bg.webp) center/cover no-repeat; }

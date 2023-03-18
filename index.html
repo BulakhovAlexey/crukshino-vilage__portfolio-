@@ -8,7 +8,7 @@
 	<!-- <style>body{opacity: 0;}</style> -->
 	<link rel="icon" type="image/svg+xml" href="img/icons/favicon.svg" />
 	<link rel="icon" type="image/png" href="img/icons/favicon.png" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20230318174030" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20230318182256" />
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -84,7 +84,7 @@
 								предпочтений и предложим Вам лучший вариант!
 							</p>
 						</div>
-						<form data-redirect="thanks" data-dev class="personal__form form-page" action="#">
+						<form data-tippy-content="Для просмотра страницы спасибо необходимо корректно заполнить форму и нажать 'ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ!'" data-redirect="thanks.html" data-dev class="personal__form form-page" action="#">
 							<input autocomplete="off" data-required="phone" data-validate type="tel" name="form[personal]" data-error="Неверный номер" placeholder="Введите номер телефона" class="input form-page__input" />
 							<button type="submit" class="button form-page__button _icon-file">
 								Получить предложение
@@ -653,12 +653,12 @@
 				<div class="village-gallery__container">
 					<h2 class="village-gallery__title _title">Фото посёлка</h2>
 					<div data-gallery class="village-gallery__photos">
-						<a href="img/village1.jpg" class="village-gallery__photo"><picture><source srcset="img/village1.webp" type="image/webp"><img src="img/village1.jpg" alt="photo" /></picture></a>
-						<a href="img/village2.jpg" class="village-gallery__photo"><picture><source srcset="img/village2.webp" type="image/webp"><img src="img/village2.jpg" alt="photo" /></picture></a>
-						<a href="img/village3.jpg" class="village-gallery__photo"><picture><source srcset="img/village3.webp" type="image/webp"><img src="img/village3.jpg" alt="photo" /></picture></a>
-						<a href="img/village4.jpg" class="village-gallery__photo"><picture><source srcset="img/village4.webp" type="image/webp"><img src="img/village4.jpg" alt="photo" /></picture></a>
-						<a href="img/village5.jpg" class="village-gallery__photo"><picture><source srcset="img/village5.webp" type="image/webp"><img src="img/village5.jpg" alt="photo" /></picture></a>
-						<a href="img/village6.jpg" class="village-gallery__photo"><picture><source srcset="img/village6.webp" type="image/webp"><img src="img/village6.jpg" alt="photo" /></picture></a>
+						<a data-watch data-watch-once data-watch-threshold="0.5" href="img/village1.jpg" class="village-gallery__photo"><picture><source srcset="img/village1.webp" type="image/webp"><img src="img/village1.jpg" alt="photo" /></picture></a>
+						<a data-watch data-watch-once data-watch-threshold="0.5" href="img/village2.jpg" class="village-gallery__photo"><picture><source srcset="img/village2.webp" type="image/webp"><img src="img/village2.jpg" alt="photo" /></picture></a>
+						<a data-watch data-watch-once data-watch-threshold="0.5" href="img/village3.jpg" class="village-gallery__photo"><picture><source srcset="img/village3.webp" type="image/webp"><img src="img/village3.jpg" alt="photo" /></picture></a>
+						<a data-watch data-watch-once data-watch-threshold="0.5" href="img/village4.jpg" class="village-gallery__photo"><picture><source srcset="img/village4.webp" type="image/webp"><img src="img/village4.jpg" alt="photo" /></picture></a>
+						<a data-watch data-watch-once data-watch-threshold="0.5" href="img/village5.jpg" class="village-gallery__photo"><picture><source srcset="img/village5.webp" type="image/webp"><img src="img/village5.jpg" alt="photo" /></picture></a>
+						<a data-watch data-watch-once data-watch-threshold="0.5" href="img/village6.jpg" class="village-gallery__photo"><picture><source srcset="img/village6.webp" type="image/webp"><img src="img/village6.jpg" alt="photo" /></picture></a>
 					</div>
 				</div>
 			</section>
@@ -962,19 +962,19 @@
 						</div>
 					</div>
 					<div class="white-box__images">
-						<div class="white-box__image">
+						<div data-watch data-watch-once data-watch-threshold="0.5" class="white-box__image">
 							<picture><source srcset="img/whiteBox1.webp" type="image/webp"><img src="img/whiteBox1.jpg" alt="white-box" /></picture>
 						</div>
-						<div class="white-box__image _big">
+						<div data-watch data-watch-once data-watch-threshold="0.5" class="white-box__image _big">
 							<picture><source srcset="img/whiteBox2.webp" type="image/webp"><img src="img/whiteBox2.jpg" alt="white-box" /></picture>
 						</div>
-						<div class="white-box__image">
+						<div data-watch data-watch-once data-watch-threshold="0.5" class="white-box__image">
 							<picture><source srcset="img/whiteBox3.webp" type="image/webp"><img src="img/whiteBox3.jpg" alt="white-box" /></picture>
 						</div>
-						<div class="white-box__image">
+						<div data-watch data-watch-once data-watch-threshold="0.5" class="white-box__image">
 							<picture><source srcset="img/whiteBox4.webp" type="image/webp"><img src="img/whiteBox4.jpg" alt="white-box" /></picture>
 						</div>
-						<div class="white-box__image">
+						<div data-watch data-watch-once data-watch-threshold="0.5" class="white-box__image">
 							<picture><source srcset="img/whiteBox5.webp" type="image/webp"><img src="img/whiteBox5.jpg" alt="white-box" /></picture>
 						</div>
 					</div>
@@ -1190,7 +1190,7 @@
 				<div class="book__container">
 					<h2 class="book__title _title">Запланируйте просмотр участка</h2>
 					<h3 class="book__sub-title _sub-title">и зафиксируйте цену!</h3>
-					<form data-dev data-redirect="thanks" action="#" class="book__form form form-page">
+					<form data-tippy-content="Для просмотра страницы спасибо необходимо корректно заполнить форму и нажать 'ЗАПЛАНИРОВАТЬ!'" data-dev data-redirect="thanks.html" action="#" class="book__form form form-page">
 						<input data-validate data-required="phone" autocomplete="off" type="tel" name="form[book]" data-error="Неверный номер телефона!" placeholder="Введите номер телефона" class="input form-page__input" />
 						<button type="submit" class="button form-page__button _icon-calendar">
 							ЗАПЛАНИРОВАТЬ
@@ -1240,7 +1240,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20230318174030"></script>
+	<script src="js/app.min.js?_v=20230318182256"></script>
 </body>
 
 </html>
