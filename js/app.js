@@ -3911,7 +3911,7 @@
                     }
                 }), 0);
                 setTimeout((() => {
-                    if (form.hasAttribute("data-redirect")) window.location.href = form.dataset.redirect;
+                    if (form.hasAttribute("data-redirect")) window.location = window.location + form.dataset.redirect + ".html";
                 }), 500);
                 formValidate.formClean(form);
                 formLogging(`Форму відправлено!`);
