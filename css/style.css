@@ -1482,7 +1482,7 @@ textarea.input {
   background: url("../img/territory-bg.jpg") center/cover no-repeat; }
 
 .sliderblock {
-  padding: 0rem 0rem 1.25rem 0rem;
+  padding: 0rem 0.625rem 1.25rem 0.625rem;
 }
 
 .sliderblock__inner {
