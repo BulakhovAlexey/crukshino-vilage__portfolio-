@@ -132,7 +132,7 @@
         transition: all 0.3s ease 0s;
         @media (any-hover: hover){
             &:hover{
-                transform: scale(1.1);
+                color: $whiteColor;
             }
         }
         @media (max-width:$mobile){
@@ -190,6 +190,13 @@
         text-decoration: underline;
         position: relative;
         z-index: 7;
+        opacity: 0.8;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover){
+            &:hover{
+                opacity: 1;
+            }
+        }
     }
     &__icon {
         left: 0;
@@ -1074,7 +1081,13 @@
     &__photo {
         position: relative;
         width: 100%;
+        &._watcher-view{
+            img{
+                animation: scaleUp 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) forwards;
+            }
+        }
         img{
+            opacity: 0;
             position: absolute;
             left: 0;
             top: 0;
@@ -1724,7 +1737,13 @@
     &__image {
         position: relative;
         padding-bottom: 84%;
+        &._watcher-view{
+            img{
+                animation: scaleUp 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) forwards;
+            }
+        }
         img{
+            opacity: 0;
             position: absolute;
             left: 0;
             top: 0;

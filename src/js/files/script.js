@@ -3,6 +3,7 @@ import { isMobile } from "./functions.js"
 // Підключення списку активних модулів
 import { flsModules } from "./modules.js"
 
+//========================================================================================================================================================
 //elem hover
 const elements = document.querySelectorAll(".element__item")
 const parentElements = document.querySelector(".element")
@@ -40,7 +41,7 @@ function hideDesc(element) {
   description.style.visibility = "hidden"
   element.style.opacity = "1"
 }
-
+//========================================================================================================================================================
 // if hover / click
 function openDesc() {
   if (!isMobile.any()) {
@@ -107,18 +108,19 @@ function initSoldHouses() {
   const sold = +document.querySelectorAll(".element__item._sold").length
   soldNum.innerHTML = Math.round((sold / summaru) * 100) + "%"
 }
-
 initSoldHouses()
 //========================================================================================================================================================
 //set delay
 
-function initDelay() {
-  const advantages = document.querySelectorAll(".box-advantages__item")
+function initDelay(selector, delay) {
+  const items = document.querySelectorAll(selector)
   let num = 0
-  advantages.forEach((advatage) => {
-    advatage.style.animationDelay = num + "s"
-    num += 0.1
+  items.forEach((items) => {
+    items.style.animationDelay = num + "s"
+    num += delay
   })
 }
-initDelay()
+initDelay(".box-advantages__item", 0.1)
+initDelay(".village-gallery__photo > img", 0.15)
+initDelay(".white-box__image > img", 0.15)
 //========================================================================================================================================================

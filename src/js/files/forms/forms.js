@@ -306,7 +306,7 @@ export function formSubmit() {
     }, 0)
     setTimeout(() => {
       if (form.hasAttribute("data-redirect")) {
-        window.location.href = form.dataset.redirect
+        window.location = window.location + form.dataset.redirect
       }
     }, 500)
     // Мы чистим форму
